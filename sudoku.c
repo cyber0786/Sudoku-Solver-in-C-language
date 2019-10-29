@@ -14,7 +14,7 @@ void Clear_Cell(int lvl);
 void push(int a, int b, int c);
 struct Stack *pop();
 void solver(int arr[9][9]);
-int IsItSafe(int arr[9][9],int row, int col, int n);
+int Is_It_Safe(int arr[9][9],int row, int col, int n);
 void display(int arr[9][9]);
 void copy_arr();
 int arr[9][9];
@@ -338,7 +338,7 @@ void solver(int arr[9][9])
                 for(k=num;k<=9;k++)
                 {
                    // printf("%d",k);
-                    if(IsItSafe(arr, i, j, k)==1)
+                    if(Is_It_Safe(arr, i, j, k)==1)
                     {
                         q=10;
                         arr[i][j]=k;
@@ -374,7 +374,7 @@ void solver(int arr[9][9])
 }
 
 //TO CHECK IF IT IS FINE TO PUT THE NUMBER IN A PARTICULAR PLACE
-int IsItSafe(int arr[9][9],int row, int col, int n)
+int Is_It_Safe(int arr[9][9],int row, int col, int n)
 {
     int i,j;
     //TO CHECK IN THE ROW
