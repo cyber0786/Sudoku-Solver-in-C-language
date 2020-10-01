@@ -67,10 +67,11 @@ int main()
     for(i=1; i<=2; i++)
     {
         a = limit[rand() % 3];
-        do
-        {
-            b = limit[rand()%3];
-        }while(a==b);
+        b = limit[rand()%3];
+        
+        while(a==b){
+            a = limit[rand() % 3];
+        }
 
         if(i==1)
             Interchange_GroupRows(a, b);
@@ -95,7 +96,7 @@ int main()
     }
     Clear_Cell(level);
     display(arr);
-    printf("\n  1. CHECK YOUR ANSWER\n  2. SEE THE SOLUTION\n");
+    printf("\n  1. CHECK YOUR ANSWER\n  2. SEE THE SOLUTION\n 3. EXIT");
     int s;
     scanf("%d",&s);
     if(s==1)
@@ -113,14 +114,14 @@ int main()
         else
             printf("SORRY! WRONG ANSWER\n ");
     }
-    else
+    else if(s==2)
     {
         display(arr1);
     }
         break;
 
     case 4:
-        printf("ENTER THE ELEMENTS OF SUDOKU IN MATRIX FORM\nNOTE: FOR BLANK SPACE ENTER '0'");
+        printf("ENTER A 9*9 SUDOKU IN MATRIX(Each line having 9 single space seperated numbers)\n NOTE: FOR BLANK SPACE ENTER '0'");
         int i,j;
         for(i=0;i<9;i++)
         {
@@ -435,7 +436,7 @@ void display(int arr[9][9])
         }
         printf("\n");
         if(i==8)
-            printf("-------------------------------------\n\n");
+            printf("---------------------------------------\n\n");
     }
 }
 
@@ -460,9 +461,7 @@ int check()
     {
         for(j=0;j<9;j++)
         {
-            if(arr1[i][j]==arr[i][j])
-                continue;
-            else
+            if(arr1[i][j]!=arr[i][j])
                 return 0;
         }
     }
