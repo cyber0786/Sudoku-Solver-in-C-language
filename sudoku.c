@@ -80,15 +80,18 @@ int main()
     copy_arr();
     if(lvl==3)
     {
-        level = rand()%(25-20+1)+20;
+        level = rand()%6;
+        level = level + 20;
     }
     else if(lvl==2)
     {
-        level = rand()%(35-30+1)+30;
+        level = rand()%6;
+        level = level +30;
     }
     else
     {
-        level = rand()%(45-40+1)+40;
+        level = rand()%6;
+        level = level +40;
     }
     Clear_Cell(level);
     display(arr);
