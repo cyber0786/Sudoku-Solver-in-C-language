@@ -301,7 +301,7 @@ struct Stack
 struct Stack *top=NULL;
 void push(int a, int b, int c)
 {
-    struct Stack temp = (struct Stack)malloc(sizeof(struct Stack));
+    struct Stack temp *= (struct Stack *)malloc(sizeof(struct Stack));
     temp->next = NULL;
     temp->prev = top;
     top = temp;
